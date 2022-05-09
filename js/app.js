@@ -1,4 +1,65 @@
-const images = [
+const app = new Vue(
+    {
+        el: '#root',
+        data: {
+            array: [
+                {
+                    image: 'img/01.jpg',
+                    name: 'Svezia',
+                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+
+                },
+                {
+                    image: 'img/02.jpg',
+                    name: 'Svizzera',
+                    text: 'Lorem ipsum',
+                },
+                {
+                    image: 'img/03.jpg',
+                    name: 'Gran Bretagna',
+                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+
+                },
+                {
+                    image: 'img/04.jpg',
+                    name: 'Germania',
+                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+
+                },
+                {
+                    image: 'img/05.jpg',
+                    name: 'Paradise',
+                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+
+                },
+            ],
+            currentSlide: 0
+        },
+        methods: {
+            next() {
+                // se sono all'ultima, mi posiziono sulla prima
+                if (currentSlide == array.length - 1) {
+                    currentSlide = 0; 
+                } else {
+                    currentSlide++; 
+                }
+
+
+
+            },
+            prev() {
+
+            }
+        }
+    },
+
+
+);
+
+
+
+
+/*const images = [
     'img/01.jpg',
     'img/02.jpg',
     'img/03.jpg',
@@ -120,5 +181,5 @@ function createThumbnails() {
                 <img src="${elem.image}" alt="${elem.title}">
             </div>`;
     }
-}
+}*/
 
