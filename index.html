@@ -15,24 +15,28 @@
     <div id="root">
         <div class="container">
             <div class="items">
-                <div v-for="(item, index) in array" class="item" :class="{ active: index === currentSlide }">
-                    <img :src="item.image" alt="">
+                <div class="items active">
+
+                    <img :src="array[currentSlide].image" alt="">
                     <div class="text">
-                        <h3>{{ item.name }}</h3>
-                        <p>{{ item.text }}</p>
+                        <h3>{{ array[currentSlide].name }}</h3>
+                        <p>{{ array[currentSlide].text }}</p>
                     </div>
                 </div>
             </div>
-            <div class="thumbs">
-                <!--
-            <div class="thumb active">
-                <img src="./img/01.jpg" alt="">
-            </div>
-            -->
-                <div class="prev" @click="prev"></div>
-                <div class="next" @click="next"></div>
-            </div>
         </div>
+        <div class="thumbs">
+            <div class="prev" @click="prev"></div>
+            <div class="next" @click="next"></div>
+
+            <div class="thumb" v-for="(item, index) in array" :class= "{
+                active: index === currentSlide}" >
+                <img :src="item.image" :alt="text.image">
+            </div>
+
+
+        </div>
+    </div>
     </div>
     <script src="js/app.js"></script>
 </body>

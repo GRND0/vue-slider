@@ -36,11 +36,11 @@ const app = new Vue(
             currentSlide: 0,
         },
         methods: {
-            next() {
+            next: function() {
                 this.currentSlide >= this.array.length - 1 ? this.currentSlide = 0 : this.currentSlide++;
             },
 
-            prev() {
+            prev: function() {
                 this.currentSlide <= 0 ? this.currentSlide = this.array.length - 1 : this.currentSlide--;
             }
         }
