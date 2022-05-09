@@ -33,22 +33,15 @@ const app = new Vue(
 
                 },
             ],
-            currentSlide: 0
+            currentSlide: 0,
         },
         methods: {
             next() {
-                // se sono all'ultima, mi posiziono sulla prima
-                if (currentSlide == array.length - 1) {
-                    currentSlide = 0; 
-                } else {
-                    currentSlide++; 
-                }
-
-
-
+                this.currentSlide >= this.array.length - 1 ? this.currentSlide = 0 : this.currentSlide++;
             },
-            prev() {
 
+            prev() {
+                this.currentSlide <= 0 ? this.currentSlide = this.array.length - 1 : this.currentSlide--;
             }
         }
     },
